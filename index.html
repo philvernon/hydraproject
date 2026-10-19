@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hydra playground</title>
+  </head>
+  <body>
+    <header>
+      <h1>Hydra playground</h1>
+      <span>Local synth · no microphone or camera</span>
+    </header>
+    <main>
+      <section class="stage" aria-label="Hydra visualization">
+        <canvas id="hydra" aria-label="Animated Hydra sketch"></canvas>
+      </section>
+      <section class="editor" aria-label="Sketch editor">
+        <div class="toolbar">
+          <label for="code">Sketch</label>
+          <div>
+            <button id="stop" type="button">Stop</button>
+            <button id="run" type="button">Run <kbd>⌘ / Ctrl + Enter</kbd></button>
+          </div>
+        </div>
+        <textarea id="code" spellcheck="false" autocapitalize="off" autocomplete="off" aria-describedby="hint"></textarea>
+        <div class="footer">
+          <p id="hint">Ask the agent for a visual — it edits <code>sketch.js</code> and this canvas updates live. Editor changes are temporary.</p>
+          <output id="status" role="status" aria-live="polite">Starting…</output>
+        </div>
+        <p class="notice">Trusted code only: sketches run as JavaScript in this page. No AI API or backend required.</p>
+      </section>
+    </main>
+    <script type="module" src="/src.js"></script>
+  </body>
+</html>
